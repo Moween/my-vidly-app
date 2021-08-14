@@ -5,7 +5,7 @@ import "./css/table.css";
 const Table = (props) => {
   const { movies, onDelete, onLike } = props;
   return (
-    <table className="table w-75 caption-top table-striped">
+    <table className="table w-75 caption-top table-striped ">
       <caption className="">Box-Office Movies</caption>
       <thead>
         <tr>

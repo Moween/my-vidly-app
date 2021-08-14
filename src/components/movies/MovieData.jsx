@@ -1,5 +1,6 @@
 import React from "react";
 import Like from "./Like";
+import { Link } from 'react-router-dom'
 
 const TableData = (props) => {
   const { movies, onDelete, onLike } = props;
@@ -8,7 +9,7 @@ const TableData = (props) => {
       {movies.map((movie) => {
         return (
           <tr key={movie.id}>
-            <td>{movie.title}</td>
+            <td><Link to={`/movie/${movie.id}`}>{movie.title}</Link></td>
             <td>{movie.genre.name}</td>
             <td>{movie.numberInStock}</td>
             <td>{movie.dailyRentalRate}</td>
