@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import movies from "../../services/fakeMovieService";
 import { genres } from "../../services/fakeGenreService";
 import Table from "./MoviesTable";
@@ -52,9 +53,12 @@ class Main extends Component {
       <div className="container">
         {movies.length === 0 ? (
           <p>No Movies in the database</p>
-          ) : (
-            <>
+        ) : (
+          <>
             <p>You have {filtered.length} in the database</p>
+            <Link to="/movie/new" className="btn btn-primary btn-md">
+              New Movie
+            </Link>
             <div className="row align-items-center justify-content-around">
               <SideBar
                 movieGenres={genres}

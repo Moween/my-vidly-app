@@ -2,6 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
+  const pageNavigation = [
+    {nav: 'Home', href: '/'},
+    {nav: 'About Us', href: '/about'},
+    {nav: 'Movies', href: '/movies'},
+    {nav: 'Register', href: '/registerForm'},
+    {nav: 'Login', href: '/form'}
+  ];
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -21,25 +29,15 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+            {pageNavigation.map((nav) => <li key={nav.nav} className="nav-item me-2 p-1">
               <NavLink
-                className="nav-NavLink active"
+                className="nav-NavLink active text-decoration-none"
                 aria-current="page"
-                to="/"
+                to={nav.href}
               >
-                Home
+                {nav.nav}
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-NavLink" to="/about">
-                About us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-NavLink" to="/movies">
-                Movies
-              </NavLink>
-            </li>
+            </li>)}
           </ul>
         </div>
       </div>

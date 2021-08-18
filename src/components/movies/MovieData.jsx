@@ -1,6 +1,7 @@
 import React from "react";
 import Like from "./Like";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const TableData = (props) => {
   const { movies, onDelete, onLike } = props;
@@ -31,5 +32,11 @@ const TableData = (props) => {
     </>
   );
 };
+
+TableData.propTypes = {
+  movies: PropTypes.array.isRequired,
+  onLike: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired
+}
 
 export default TableData;
